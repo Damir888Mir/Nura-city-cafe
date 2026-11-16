@@ -182,35 +182,6 @@
   $$('.slider__btn').forEach(b => b.addEventListener('click', () => go(idx + parseInt(b.dataset.dir, 10), true)));
   go(0); restart();
 
-  /* ---------- Видео ---------- */
-  const film = $('#film');
-  const video = $('#filmVideo');
-  const filmBtn = $('#filmToggle');
-  const filmLabel = $('.film__label', filmBtn);
-  let userPaused = false;
-  const ensureSrc = () => {
-    if (video.src) return;
-    video.src = window.innerWidth <= 700 ? video.dataset.srcSm : video.dataset.src;
-  };
-  const setFilmState = (playing) => {
-    film.classList.toggle('is-playing', playing);
-    filmBtn.setAttribute('aria-pressed', playing);
-    filmLabel.textContent = playing ? 'Пауза' : 'Смотреть видео';
-  };
-  const playFilm = () => { ensureSrc(); const p = video.play(); if (p) p.catch(() => setFilmState(false)); };
-  video.addEventListener('play', () => setFilmState(true));
-  video.addEventListener('pause', () => setFilmState(false));
-  filmBtn.addEventListener('click', () => {
-    if (video.paused) { userPaused = false; playFilm(); } else { userPaused = true; video.pause(); }
-  });
-  video.addEventListener('click', () => filmBtn.click());
-  new IntersectionObserver((en) => {
-    en.forEach(e => {
-      if (e.isIntersecting) { if (!reduce && !userPaused) playFilm(); }
-      else if (!video.paused) video.pause();
-    });
-  }, { threshold: 0.35 }).observe(film);
-
   /* ---------- Лайтбокс ---------- */
   const lb = $('#lightbox');
   const lbImg = $('img', lb);

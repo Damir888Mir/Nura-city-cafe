@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="images/evening-1400.webp" type="image/webp">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
   <style>
     [hidden]{display:none!important}
     .preloader.is-done{pointer-events:none}
@@ -205,17 +205,23 @@
       </div>
     </section>
 
-    <!-- Видео -->
-    <section class="film" id="film" aria-label="Видео об атмосфере кафе">
-      <div class="film__frame reveal-img">
-        <video class="film__video" id="filmVideo" muted loop playsinline preload="none" poster="images/poster.jpg" data-src="video/nura-atmosphere.mp4" data-src-sm="video/nura-atmosphere-sm.mp4"></video>
-        <div class="film__overlay">
-          <p class="eyebrow">Один день в Nūra</p>
-          <h2 class="film__title">Уютный вечер, <em>тёплый свет</em> и&nbsp;время для&nbsp;себя</h2>
-          <div class="film__actions">
-            <button class="btn btn--light film__toggle magnetic" id="filmToggle" aria-pressed="false"><span class="film__icon" aria-hidden="true"></span><span class="film__label">Смотреть видео</span></button>
+    <!-- Интерьер -->
+    <section class="film" id="film" aria-label="Интерьер кафе">
+      <div class="film__card">
+        <div class="film__text">
+          <p class="eyebrow reveal">Интерьер</p>
+          <h2 class="film__title reveal">Светлое пространство, <em>тёплый свет</em> и&nbsp;время для&nbsp;себя</h2>
+          <p class="film__lead reveal">Мягкие линии, натуральные оттенки и&nbsp;подсветка, которая делает вечер особенно уютным. Приходите за&nbsp;столик у&nbsp;окна или на&nbsp;кофе с&nbsp;собой.</p>
+          <div class="film__actions reveal">
+            <a class="btn btn--light magnetic" href="https://www.instagram.com/reel/DcK3a4utOUI/" target="_blank" rel="noopener"><span class="film__icon" aria-hidden="true"></span> Смотреть видео</a>
             <a class="link-arrow link-arrow--light" href="https://www.instagram.com/nura.citycafe/reels/" target="_blank" rel="noopener"><svg class="i"><use href="#ico-ig"/></svg> Больше видео в Instagram</a>
           </div>
+        </div>
+        <div class="film__media arch reveal-img">
+          <picture>
+            <source srcset="images/interior-nura.webp" type="image/webp">
+            <img src="images/interior-nura.jpg" alt="Интерьер Nūra city cafe: светящийся потолок с логотипом NŪRA, витрина и уютный зал" width="720" height="1280" loading="lazy">
+          </picture>
         </div>
       </div>
     </section>
@@ -300,7 +306,6 @@
           <figure class="m-item reveal-img"><button class="m-btn" data-full="images/flower.webp" aria-label="Открыть фото: цветы на столике"><picture><source srcset="images/flower.webp" type="image/webp"><img src="images/flower.jpg" alt="Белые хризантемы на деревянном столике" loading="lazy" width="900" height="720"></picture></button></figure>
           <figure class="m-item m-item--tall reveal-img"><button class="m-btn" data-full="images/set-1400.webp" aria-label="Открыть фото: обед"><picture><source srcset="images/set-800.webp" type="image/webp"><img src="images/set.jpg" alt="Обед и капучино" loading="lazy" width="1216" height="2160"></picture></button></figure>
           <figure class="m-item reveal-img"><button class="m-btn" data-full="images/breakfast2-1400.webp" aria-label="Открыть фото: тартин"><picture><source srcset="images/breakfast2-800.webp" type="image/webp"><img src="images/breakfast2.jpg" alt="Тартин с лососем" loading="lazy" width="720" height="960"></picture></button></figure>
-          <figure class="m-item reveal-img"><button class="m-btn" data-full="images/sofa.webp" aria-label="Открыть фото: гости на диване"><picture><source srcset="images/sofa.webp" type="image/webp"><img src="images/sofa.jpg" alt="Гости беседуют за столиком у мягкого дивана" loading="lazy" width="1276" height="720"></picture></button></figure>
           <figure class="m-item reveal-img"><button class="m-btn" data-full="images/cupcakes.webp" aria-label="Открыть фото: кексы"><picture><source srcset="images/cupcakes.webp" type="image/webp"><img src="images/cupcakes.jpg" alt="Кексы с кремом" loading="lazy" width="720" height="720"></picture></button></figure>
         </div>
       </div>
@@ -408,6 +413,6 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
-  <script src="script.js?v=3" defer></script>
+  <script src="script.js?v=4" defer></script>
 </body>
 </html>
