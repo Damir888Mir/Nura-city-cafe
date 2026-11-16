@@ -106,9 +106,9 @@
             <a href="#contacts" class="btn btn--ghost magnetic">Как нас найти</a>
           </div>
           <ul class="hero__chips reveal" data-delay="4">
-            <li><svg class="i"><use href="#ico-clock"/></svg> Ежедневно 08:00–22:00</li>
-            <li><svg class="i"><use href="#ico-pin"/></svg> Байзакова, 225</li>
-            <li><svg class="i i--star"><use href="#ico-star"/></svg> 4,9 в 2ГИС</li>
+            <li><a href="#contacts"><svg class="i"><use href="#ico-clock"/></svg> Ежедневно 08:00–22:00</a></li>
+            <li><a href="https://2gis.kz/almaty/firm/70000001110583932" target="_blank" rel="noopener"><svg class="i"><use href="#ico-pin"/></svg> Байзакова, 225</a></li>
+            <li><a href="https://2gis.kz/almaty/firm/70000001110583932/tab/reviews" target="_blank" rel="noopener"><svg class="i i--star"><use href="#ico-star"/></svg> 4,9 в 2ГИС</a></li>
           </ul>
         </div>
         <div class="hero__media">
@@ -144,14 +144,14 @@
         <div class="about__media">
           <div class="arch arch--tall reveal-img">
             <picture>
-              <source srcset="images/interior-800.webp 800w, images/interior-1400.webp 1400w" sizes="(max-width: 900px) 70vw, 30vw" type="image/webp">
-              <img src="images/interior.jpg" alt="Светлая барная стойка Nūra city cafe с белыми чашками" width="1170" height="2080" loading="lazy">
+              <source srcset="images/sign.webp" type="image/webp">
+              <img src="images/sign.jpg" alt="Светящаяся вывеска NŪRA у входа в кафе" width="500" height="720" loading="lazy">
             </picture>
           </div>
           <div class="about__small reveal-img" data-parallax="-0.05">
             <picture>
-              <source srcset="images/guest-800.webp" type="image/webp">
-              <img src="images/guest.jpg" alt="Уголок кафе с макраме-люстрой и мягким диваном" width="720" height="770" loading="lazy">
+              <source srcset="images/cupcakes.webp" type="image/webp">
+              <img src="images/cupcakes.jpg" alt="Кексы с кремом на деревянной доске" width="720" height="720" loading="lazy">
             </picture>
           </div>
         </div>
@@ -178,22 +178,37 @@
           <h2 class="section-title reveal">С утра и до <em>позднего вечера</em></h2>
         </div>
         <div class="offer__grid">
-          <article class="card reveal" data-delay="0">
-            <div class="card__img"><picture><source srcset="images/interior-800.webp" type="image/webp"><img src="images/interior.jpg" alt="Кофейная стойка" loading="lazy" width="1170" height="2080"></picture></div>
-            <div class="card__body"><span class="card__num">01</span><h3>Specialty coffee</h3><p>Классика эспрессо, бамбл, айс-кофе и&nbsp;матча — на месте или с&nbsp;собой.</p></div>
-          </article>
-          <article class="card reveal" data-delay="1">
+          <a href="#menu" data-tab="t-coffee" class="card reveal" data-delay="0">
+            <div class="card__img"><picture><source srcset="images/bar.webp" type="image/webp"><img src="images/bar.jpg" alt="Барная стойка с цветами и лампой" loading="lazy" width="640" height="720"></picture></div>
+            <div class="card__body"><span class="card__num">01</span><h3>Specialty coffee</h3><p>Классика эспрессо, бамбл, айс-кофе и&nbsp;матча — на месте или с&nbsp;собой.</p><span class="card__more">Смотреть в меню <svg class="i"><use href="#ico-arrow"/></svg></span></div>
+          </a>
+          <a href="#menu" data-tab="t-food" class="card reveal" data-delay="1">
             <div class="card__img"><picture><source srcset="images/breakfast2-800.webp" type="image/webp"><img src="images/breakfast2.jpg" alt="Тартин с лососем и яйцом пашот" loading="lazy" width="720" height="960"></picture></div>
-            <div class="card__body"><span class="card__num">02</span><h3>Завтраки</h3><p>Английский завтрак, скандинавский тартин с&nbsp;лососем, панкейки с&nbsp;вишнёвым конфитюром.</p></div>
-          </article>
-          <article class="card reveal" data-delay="2">
+            <div class="card__body"><span class="card__num">02</span><h3>Завтраки</h3><p>Английский завтрак, скандинавский тартин с&nbsp;лососем, панкейки с&nbsp;вишнёвым конфитюром.</p><span class="card__more">Смотреть в меню <svg class="i"><use href="#ico-arrow"/></svg></span></div>
+          </a>
+          <a href="#menu" data-tab="t-food" class="card reveal" data-delay="2">
             <div class="card__img"><picture><source srcset="images/set-800.webp" type="image/webp"><img src="images/set.jpg" alt="Ланч: куриное филе, роллы из баклажанов, блинчики и капучино" loading="lazy" width="1216" height="2160"></picture></div>
-            <div class="card__body"><span class="card__num">03</span><h3>Ланчи</h3><p>Пасты, супы, салаты и&nbsp;сэндвичи — быстро, сытно и&nbsp;с&nbsp;красивой подачей.</p></div>
-          </article>
-          <article class="card reveal" data-delay="3">
+            <div class="card__body"><span class="card__num">03</span><h3>Ланчи</h3><p>Пасты, супы, салаты и&nbsp;сэндвичи — быстро, сытно и&nbsp;с&nbsp;красивой подачей.</p><span class="card__more">Смотреть в меню <svg class="i"><use href="#ico-arrow"/></svg></span></div>
+          </a>
+          <a href="#menu" data-tab="t-sweet" class="card reveal" data-delay="3">
             <div class="card__img"><picture><source srcset="images/dessert-800.webp" type="image/webp"><img src="images/dessert.jpg" alt="Десерт с фисташкой и ягодный чай" loading="lazy" width="1024" height="1365"></picture></div>
-            <div class="card__body"><span class="card__num">04</span><h3>Десерты</h3><p>Немного искусства, щепотка любви и&nbsp;много вкуса. Бельгийские вафли и&nbsp;блинчики с&nbsp;карамелью.</p></div>
-          </article>
+            <div class="card__body"><span class="card__num">04</span><h3>Десерты</h3><p>Немного искусства, щепотка любви и&nbsp;много вкуса. Бельгийские вафли и&nbsp;блинчики с&nbsp;карамелью.</p><span class="card__more">Смотреть в меню <svg class="i"><use href="#ico-arrow"/></svg></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Видео -->
+    <section class="film" id="film" aria-label="Видео об атмосфере кафе">
+      <div class="film__frame reveal-img">
+        <video class="film__video" id="filmVideo" muted loop playsinline preload="none" poster="images/poster.jpg" data-src="video/nura-atmosphere.mp4" data-src-sm="video/nura-atmosphere-sm.mp4"></video>
+        <div class="film__overlay">
+          <p class="eyebrow">Один день в Nūra</p>
+          <h2 class="film__title">Уютный вечер, <em>тёплый свет</em> и&nbsp;время для&nbsp;себя</h2>
+          <div class="film__actions">
+            <button class="btn btn--light film__toggle magnetic" id="filmToggle" aria-pressed="false"><span class="film__icon" aria-hidden="true"></span><span class="film__label">Смотреть видео</span></button>
+            <a class="link-arrow link-arrow--light" href="https://www.instagram.com/nura.citycafe/reels/" target="_blank" rel="noopener"><svg class="i"><use href="#ico-ig"/></svg> Больше видео в Instagram</a>
+          </div>
         </div>
       </div>
     </section>
@@ -275,10 +290,11 @@
         <div class="masonry">
           <figure class="m-item m-item--tall reveal-img"><button class="m-btn" data-full="images/evening-1400.webp" aria-label="Открыть фото: вечерний интерьер"><picture><source srcset="images/evening-800.webp" type="image/webp"><img src="images/evening.jpg" alt="Вечерний интерьер" loading="lazy" width="1216" height="2160"></picture></button></figure>
           <figure class="m-item reveal-img"><button class="m-btn" data-full="images/dessert-1400.webp" aria-label="Открыть фото: десерт"><picture><source srcset="images/dessert-800.webp" type="image/webp"><img src="images/dessert.jpg" alt="Десерт с фисташкой" loading="lazy" width="1024" height="1365"></picture></button></figure>
-          <figure class="m-item reveal-img"><button class="m-btn" data-full="images/guest-1400.webp" aria-label="Открыть фото: уголок с макраме"><picture><source srcset="images/guest-800.webp" type="image/webp"><img src="images/guest.jpg" alt="Уголок с макраме-люстрой" loading="lazy" width="720" height="770"></picture></button></figure>
+          <figure class="m-item reveal-img"><button class="m-btn" data-full="images/flower.webp" aria-label="Открыть фото: цветы на столике"><picture><source srcset="images/flower.webp" type="image/webp"><img src="images/flower.jpg" alt="Белые хризантемы на деревянном столике" loading="lazy" width="900" height="720"></picture></button></figure>
           <figure class="m-item m-item--tall reveal-img"><button class="m-btn" data-full="images/set-1400.webp" aria-label="Открыть фото: обед"><picture><source srcset="images/set-800.webp" type="image/webp"><img src="images/set.jpg" alt="Обед и капучино" loading="lazy" width="1216" height="2160"></picture></button></figure>
           <figure class="m-item reveal-img"><button class="m-btn" data-full="images/breakfast2-1400.webp" aria-label="Открыть фото: тартин"><picture><source srcset="images/breakfast2-800.webp" type="image/webp"><img src="images/breakfast2.jpg" alt="Тартин с лососем" loading="lazy" width="720" height="960"></picture></button></figure>
-          <figure class="m-item reveal-img"><button class="m-btn" data-full="images/team-1400.webp" aria-label="Открыть фото: наша команда"><picture><source srcset="images/team-800.webp" type="image/webp"><img src="images/team.jpg" alt="Официантка Nūra city cafe" loading="lazy" width="1024" height="700"></picture></button></figure>
+          <figure class="m-item reveal-img"><button class="m-btn" data-full="images/sofa.webp" aria-label="Открыть фото: гости на диване"><picture><source srcset="images/sofa.webp" type="image/webp"><img src="images/sofa.jpg" alt="Гости беседуют за столиком у мягкого дивана" loading="lazy" width="1276" height="720"></picture></button></figure>
+          <figure class="m-item reveal-img"><button class="m-btn" data-full="images/cupcakes.webp" aria-label="Открыть фото: кексы"><picture><source srcset="images/cupcakes.webp" type="image/webp"><img src="images/cupcakes.jpg" alt="Кексы с кремом" loading="lazy" width="720" height="720"></picture></button></figure>
         </div>
       </div>
     </section>
@@ -355,7 +371,7 @@
             <a class="btn btn--ghost magnetic" href="https://wa.me/77066307081" target="_blank" rel="noopener"><svg class="i"><use href="#ico-wa"/></svg> Написать</a>
           </div>
         </div>
-        <div class="map-wrap reveal-img">
+        <div class="map-wrap reveal">
           <div id="map" class="map" role="region" aria-label="Карта 2ГИС: Nūra city cafe, Байзакова 225"></div>
           <a class="map__badge" href="https://2gis.kz/almaty/firm/70000001110583932" target="_blank" rel="noopener">Открыть в 2ГИС</a>
         </div>

@@ -6,7 +6,8 @@
   /* ---------- Прелоадер ---------- */
   document.body.classList.add('is-loading');
   const finishLoading = () => {
-    $('#preloader')?.classList.add('is-done');
+    const pre = $('#preloader');
+    if (pre) { pre.classList.add('is-done'); setTimeout(() => pre.remove(), 1200); }
     document.body.classList.remove('is-loading');
     requestAnimationFrame(() => document.documentElement.classList.add('is-ready'));
   };
@@ -151,6 +152,11 @@
       next.focus(); selectTab(next);
     });
   });
+  // карточки «Что мы готовим» открывают нужную вкладку меню
+  $$('.card[data-tab]').forEach(card => card.addEventListener('click', () => {
+    const t = document.getElementById(card.dataset.tab);
+    if (t) selectTab(t);
+  }));
   const syncInk = () => moveInk($('.tab.is-active'));
   window.addEventListener('resize', syncInk);
   document.fonts?.ready.then(syncInk);
@@ -175,6 +181,35 @@
   const restart = () => { clearInterval(timer); if (!reduce) timer = setInterval(() => go(idx + 1), 7000); };
   $$('.slider__btn').forEach(b => b.addEventListener('click', () => go(idx + parseInt(b.dataset.dir, 10), true)));
   go(0); restart();
+
+  /* ---------- Видео ---------- */
+  const film = $('#film');
+  const video = $('#filmVideo');
+  const filmBtn = $('#filmToggle');
+  const filmLabel = $('.film__label', filmBtn);
+  let userPaused = false;
+  const ensureSrc = () => {
+    if (video.src) return;
+    video.src = window.innerWidth <= 700 ? video.dataset.srcSm : video.dataset.src;
+  };
+  const setFilmState = (playing) => {
+    film.classList.toggle('is-playing', playing);
+    filmBtn.setAttribute('aria-pressed', playing);
+    filmLabel.textContent = playing ? 'Пауза' : 'Смотреть видео';
+  };
+  const playFilm = () => { ensureSrc(); const p = video.play(); if (p) p.catch(() => setFilmState(false)); };
+  video.addEventListener('play', () => setFilmState(true));
+  video.addEventListener('pause', () => setFilmState(false));
+  filmBtn.addEventListener('click', () => {
+    if (video.paused) { userPaused = false; playFilm(); } else { userPaused = true; video.pause(); }
+  });
+  video.addEventListener('click', () => filmBtn.click());
+  new IntersectionObserver((en) => {
+    en.forEach(e => {
+      if (e.isIntersecting) { if (!reduce && !userPaused) playFilm(); }
+      else if (!video.paused) video.pause();
+    });
+  }, { threshold: 0.35 }).observe(film);
 
   /* ---------- Лайтбокс ---------- */
   const lb = $('#lightbox');
@@ -226,6 +261,9 @@
       subdomains: '0123', maxZoom: 18,
       attribution: '&copy; <a href="https://2gis.kz/almaty" target="_blank" rel="noopener">2ГИС</a>'
     }).addTo(map);
+    // колесо мыши включается после клика по карте, чтобы не мешать прокрутке страницы
+    map.on('click focus', () => map.scrollWheelZoom.enable());
+    mapEl.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
     const icon = L.divIcon({
       className: 'map-pin-wrap',
       html: '<div class="map-pin"><svg viewBox="0 0 100 100"><use href="#logo"/></svg></div>',
@@ -236,8 +274,10 @@
       .openPopup();
   };
   // Карта грузится, когда секция контактов близко к экрану
-  const mapIO = new IntersectionObserver((en) => {
-    if (!en[0].isIntersecting) return;
+  let mapStarted = false;
+  const startMap = () => {
+    if (mapStarted) return;
+    mapStarted = true;
     mapIO.disconnect();
     let tries = 0;
     const wait = () => {
@@ -246,6 +286,9 @@
       setTimeout(wait, 250);
     };
     wait();
-  }, { rootMargin: '400px' });
+  };
+  const mapIO = new IntersectionObserver((en) => { if (en[0].isIntersecting) startMap(); }, { rootMargin: '600px' });
   mapIO.observe(mapEl);
+  // запасной вариант: карта всё равно загрузится через пару секунд после открытия страницы
+  window.addEventListener('load', () => setTimeout(startMap, 2500));
 })();
